@@ -20,20 +20,18 @@ func readSymbolsAndYears(from fileURL: URL) -> ([SymbolTuple], Releases) {
     let releaseDatesFromReleases = Set<ReleaseDate>(releases.keys)
     
     assert(releaseDatesFromReleases.isSubset(of:releaseDatesFromSymbols),
-           "There are symbols with relasedates that have no release versions \(releaseDatesFromReleases) < \(releaseDatesFromSymbols)")
+           "There are symbols with releasedates that have no release versions \(releaseDatesFromReleases) < \(releaseDatesFromSymbols)")
     
     let sortedSymbolTuple = symbols
         .sorted {
             $0.value == $1.value ? $0.key < $1.key : $0.value < $1.value
         }
         .map {
-            SymbolTuple(symbol:$0.key,released:$0.value)
+            SymbolTuple(symbol: $0.key, released: $0.value)
         }
     
     return (sortedSymbolTuple, releases)
 }
-
-
 
 let (sortedSymbolTuple, releaseYears) = readSymbolsAndYears(from: URL(fileURLWithPath: "/Applications/SF Symbols beta.app/Contents/Resources/Metadata/name_availability.plist"))
 
