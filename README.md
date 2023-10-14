@@ -3,7 +3,7 @@ Easy to generate SF Symbols enum with Swift
 
 ## Currently Support States
 
-* Support SF Symbols 5 beta
+* Support SF Symbols 5
 
 ## Minimum OS Requirement
 
