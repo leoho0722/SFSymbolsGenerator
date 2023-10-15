@@ -1,6 +1,6 @@
 # SFSymbolsGenerator
 
-Easy to generate SF Symbols enum with Swift
+Simplifying SF Symbols Enumeration Generation with Swift!
 
 ## Currently Support States
 
