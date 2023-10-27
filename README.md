@@ -12,7 +12,7 @@ Simplifying SF Symbols Enumeration Generation with Swift!
 
 ## How to Use
 
-![Command Usage](./Assets/Command Usage.png)
+![Command Usage](./Assets/Command%20Usage.png)
 
 1. Download binary file from Latest Releases
 2. Open Terminal.app (notes: check current path exists SFSymbolsGenerator binary file!)
