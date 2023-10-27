@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D01233BF2AC9D89900E5892E"
+               BlueprintIdentifier = "SFSymbolsGenerator"
                BuildableName = "SFSymbolsGenerator"
                BlueprintName = "SFSymbolsGenerator"
-               ReferencedContainer = "container:SFSymbolsGenerator.xcodeproj">
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -38,16 +38,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D01233BF2AC9D89900E5892E"
+            BlueprintIdentifier = "SFSymbolsGenerator"
             BuildableName = "SFSymbolsGenerator"
             BlueprintName = "SFSymbolsGenerator"
-            ReferencedContainer = "container:SFSymbolsGenerator.xcodeproj">
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +60,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D01233BF2AC9D89900E5892E"
+            BlueprintIdentifier = "SFSymbolsGenerator"
             BuildableName = "SFSymbolsGenerator"
             BlueprintName = "SFSymbolsGenerator"
-            ReferencedContainer = "container:SFSymbolsGenerator.xcodeproj">
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

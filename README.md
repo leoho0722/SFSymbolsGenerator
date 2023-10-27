@@ -12,29 +12,41 @@ Simplifying SF Symbols Enumeration Generation with Swift!
 
 ## How to Use
 
-### git clone
-
-1. Clone this Project
-2. Use Xcode to open it
-3. Command + R
-4. Find outputPath in Output area, and Happy use it!
-
-### Terminal
+![Command Usage](./Assets/Command Usage.png)
 
 1. Download binary file from Latest Releases
 2. Open Terminal.app (notes: check current path exists SFSymbolsGenerator binary file!)
-3. run ```./SFSymbolsGenerator```, and find outputPath in Terminal, and Happy use it!
+3. run ```./SFSymbolsGenerator <filepath>```, and Happy use it!
 
-#### Arguments
+#### Argument
 
-| Argument   | Description         |
-|------------|---------------------|
-| --use-beta | Use SF Symbols beta |
+| Argument   | Description                 | Required or Optional |
+|------------|-----------------------------| :------------------: |
+| filepath   | Specify filepath of output. | **Required**         |
+
+#### Flag
+
+| Argument   | Description                 | Required or Optional |
+|------------|-----------------------------| :------------------: |
+| --name     | Specify filename of output. | **Optional**         |
+
+#### Flag
+
+| Argument   | Description         | Required or Optional |
+|------------|---------------------| :------------------: |
+| --use-beta | Use SF Symbols beta | **Optional**         |
 
 ##### Example
 
 ```shell
-./SFSymbolsGenerator --use-beta
+# Normal Usage
+./SFSymbolsGenerator /Users/leoho/Desktop
+
+# Specify filename Usage
+./SFSymbolsGenerator /Users/leoho/Desktop --name SFSymbols
+
+# beta version Usage
+./SFSymbolsGenerator /Users/leoho/Desktop --use-beta
 ```
 
 ## Thanks

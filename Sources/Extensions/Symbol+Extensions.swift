@@ -2,7 +2,7 @@
 //  Symbol+Extensions.swift
 //  SFSymbolsGenerator
 //
-//  Created by Leo Ho on 2023/10/2.
+//  Created by Leo Ho on 2023/10/27.
 //
 
 import Foundation
