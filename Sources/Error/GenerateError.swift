@@ -20,13 +20,13 @@ enum GenerateError: Error, CustomStringConvertible {
     var description: String {
         switch self {
         case .unknown(let error):
-            "Unknown Error: \(error.localizedDescription)"
+            return "Unknown Error: \(error.localizedDescription)"
         case .notInstallSFSymbols:
-            "SF Symbols.app is not installed yet! Please go to Apple Developer Website to download!"
+            return "SF Symbols.app is not installed yet! Please go to Apple Developer Website to download!"
         case .notInstallSFSymbolsBeta:
-            "SF Symbols beta.app is not installed yet! Please go to Apple Developer Website to download!"
+            return "SF Symbols beta.app is not installed yet! Please go to Apple Developer Website to download!"
         case .propertyList(let error):
-            "PropertyList Error: \(error.localizedDescription)"
+            return "PropertyList Error: \(error.localizedDescription)"
         }
     }
 }
