@@ -2,6 +2,7 @@
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/leoho0722/SFSymbolsGenerator?sort=semver&label=Release)
 
 Simplifying SF Symbols Enumeration Generation with Swift!
 
