@@ -1,18 +1,20 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
 //
-// Swift Argument Parser
-// https://swiftpackageindex.com/apple/swift-argument-parser/documentation
-
-import Foundation
+//  SFSymbolsGenerator.swift
+//  SFSymbolsGenerator
+//
+//  Created by Leo Ho on 2023/10/27.
+//
 
 import ArgumentParser
+import Foundation
 
 @main
 struct SFSymbolsGenerator: ParsableCommand {
     
-    static let configuration = CommandConfiguration(abstract: "Simplifying SF Symbols Enumeration Generation with Swift!", 
-                                                    version: "0.0.1")
+    static let configuration = CommandConfiguration(
+        abstract: "Simplifying SF Symbols Enumeration Generation with Swift!",
+        version: "1.1.0"
+    )
     
     @Argument(
         help: "[Required] Specify filepath of output. Example: /Users/<YOUR_USERNAME>/Desktop"
