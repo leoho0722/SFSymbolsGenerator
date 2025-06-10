@@ -13,7 +13,7 @@ struct SFSymbolsGenerator: ParsableCommand {
     
     static let configuration = CommandConfiguration(
         abstract: "Simplifying SF Symbols Enumeration Generation with Swift!",
-        version: "1.1.0"
+        version: "1.2.0"
     )
     
     @Argument(
