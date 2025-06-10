@@ -8,8 +8,10 @@ Simplifying SF Symbols Enumeration Generation with Swift!
 
 ## Currently Support States
 
-* Support SF Symbols 6 beta
-* Support SF Symbols 5
+* Beta Version
+    * Support SF Symbols 7 beta
+* Stable Version
+    * Support SF Symbols 5 or above
 
 ## Minimum OS Requirement
 
