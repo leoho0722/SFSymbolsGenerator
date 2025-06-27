@@ -1,56 +1,293 @@
 # SFSymbolsGenerator
 
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
+**🌐 Language / 語言選擇**
+
+- [English](README.md) | [繁體中文](README_zh-TW.md)
+
+[![Swift Version](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/leoho0722/SFSymbolsGenerator?sort=semver&label=Release)
 
-Simplifying SF Symbols Enumeration Generation with Swift!
+**Simplifying SF Symbols Enumeration Generation with Swift!**
 
-## Currently Support States
+A Swift-based command-line utility that generates type-safe Swift enumerations for SF Symbols with proper availability annotations, built with clean architecture principles.
 
-* Beta Version
-    * Support SF Symbols 7 beta
-* Stable Version
-    * Support SF Symbols 5 or above
+## ✨ Features
 
-## Minimum OS Requirement
+- 🎯 **Type-Safe Generation**: Creates Swift enumerations with compile-time safety
+- 📱 **Availability Annotations**: Automatic `@available` attributes for proper platform support
+- 🔄 **Dual Version Support**: Works with both stable and beta SF Symbols versions
+- 🏗️ **Clean Architecture**: Well-structured codebase following SOLID principles
+- ⚡ **Performance Optimized**: Fast symbol processing and code generation
+- 🛠️ **Keyword Handling**: Proper handling of Swift reserved keywords
+- 📝 **Documentation**: Comprehensive inline documentation and comments
 
-* macOS Ventura 13.3 (Compatible with Intel and Apple Silicon-based Macs)
+## 📋 Requirements
 
-## How to Use
+- **macOS**: 14.0 or later
+- **Xcode**: 15.0 or later
+- **Swift**: 5.8 or later
+- **SF Symbols App**: Version 5.0 or later (stable) / Version 7.0 or later (beta)
 
-![Command Usage](./Assets/Command%20Usage.png)
+## 🏗️ Project Architecture
 
-1. Download binary file from Latest Releases
-2. Open Terminal.app (notes: check current path exists SFSymbolsGenerator binary file!)
-3. run ```./SFSymbolsGenerator <filepath>```, and Happy use it!
+This project follows Clean Architecture principles with a clear separation of concerns:
 
-### Argument
-
-| Argument   | Description                 | Required or Optional |
-|------------|-----------------------------| :------------------: |
-| filepath   | Specify filepath of output. | **Required**         |
-
-### Flag
-
-| Argument   | Description                                             | Required or Optional |
-|------------|---------------------------------------------------------|:--------------------:|
-| --name     | Specify filename of output. Default is `SFSymbols+Enum` |     **Optional**     |
-| --use-beta | Use SF Symbols beta                                     |     **Optional**     |
-
-## Example
-
-```shell
-# Normal Usage
-./SFSymbolsGenerator /Users/leoho/Desktop
-
-# Specify filename Usage
-./SFSymbolsGenerator /Users/leoho/Desktop --name SFSymbols
-
-# beta version Usage
-./SFSymbolsGenerator /Users/leoho/Desktop --use-beta
+```text
+Sources/
+├── Application/                   # Application Layer
+│   ├── Commands/                  # CLI command implementations
+│   └── SFSymbolsGenerator.swift
+├── Domain/                        # Domain Layer
+│   ├── Models/                    # Domain models and extensions
+│   └── Services/                  # Core business logic services
+├── Infrastructure/                # Infrastructure Layer
+│   ├── FileSystem/                # File operations
+│   └── Errors/                    # Error handling
+└── Foundation/                    # Foundation Layer
+    └── Types/                     # Type aliases and basic types
 ```
 
-## Thanks
+### Architecture Benefits
 
-1. <https://github.com/jollyjinx/SFSymbolEnum>
+- **Maintainability**: Clear separation makes the code easy to understand and modify
+- **Testability**: Each layer can be independently tested
+- **Scalability**: Easy to add new features without affecting existing code
+- **Reusability**: Components can be reused across different contexts
+
+## 📦 Installation
+
+### From Releases
+
+1. Download the latest binary from [GitHub Releases](https://github.com/leoho0722/SFSymbolsGenerator/releases)
+2. Extract and place the binary in your desired location
+3. Make it executable: `chmod +x sf-symbols`
+
+### Build from Source
+
+```bash
+git clone https://github.com/leoho0722/SFSymbolsGenerator.git
+cd SFSymbolsGenerator
+swift build -c release
+# Binary will be at .build/release/sf-symbols
+```
+
+## 🚀 Usage
+
+### Command Structure
+
+```bash
+sf-symbols generate <filepath> [--name <name>] [--enum-name <enum-name>] [--use-beta]
+sf-symbols version
+```
+
+### Generate Command
+
+```bash
+# Basic usage
+sf-symbols generate /path/to/output
+
+# With custom filename
+sf-symbols generate /path/to/output --name CustomSymbols
+
+# Using beta version
+sf-symbols generate /path/to/output --use-beta
+
+# Complete example
+sf-symbols generate ~/Desktop --name MySymbols --use-beta
+```
+
+### Command Options
+
+| Option        | Description                                      | Default          | Required |
+|---------------|--------------------------------------------------|------------------|----------|
+| `filepath`    | Directory where the Swift file will be generated | -                | ✅        |
+| `--name`      | Specify filename of output                       | `SFSymbols+Enum` | ❌        |
+| `--enum-name` | Specify enum name of output                      | `SFSymbols`      | ❌        |
+| `--use-beta`  | Whether use beta version of SF Symbols or not    | `false`          | ❌        |
+
+## 📝 Generated Output
+
+The tool generates a Swift enumeration file with the following structure:
+
+```swift
+// SFSymbols.swift
+// Generated by SFSymbolsGenerator
+// Do not edit this file manually.
+
+import Foundation
+
+public enum SFSymbols: String, CaseIterable {
+    /// SF Symbols's name：arrow.left
+    @available(iOS 13.0, macOS 10.15, *)
+    case arrowLeft = "arrow.left"
+    
+    /// SF Symbols's name：star.fill
+    @available(iOS 14.0, macOS 11.0, *)
+    case starFill = "star.fill"
+    
+    public static var allCases: [SFSymbols] {
+        var allCases: [SFSymbols] = []
+        if #available(iOS 13.0, macOS 10.15, *) {
+            allCases.append(.arrowLeft)
+        }
+        if #available(iOS 14.0, macOS 11.0, *) {
+            allCases.append(.starFill)
+        }
+        return allCases
+    }
+}
+```
+
+## 🛠️ Development
+
+### Building the Project
+
+```bash
+swift build
+```
+
+### Running Tests
+
+```bash
+swift test
+```
+
+### Project Structure Details
+
+- **Application Layer**: Contains the main CLI interface and command handling
+- **Domain Layer**: Core business logic for symbol processing and code generation
+- **Infrastructure Layer**: File I/O operations and error handling infrastructure
+- **Foundation Layer**: Basic types, aliases, and utility definitions
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Guidelines
+
+1. Follow Swift coding conventions
+2. Maintain clean architecture principles
+3. Add tests for new functionality
+4. Update documentation as needed
+
+## 🎯 Usage Examples
+
+### Using in iOS/macOS Projects
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Use the generated enumeration
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: SFSymbols.starFill.rawValue)
+        
+        // Check availability
+        if SFSymbols.allCases.contains(.arrowLeft) {
+            print("Arrow left symbol is available")
+        }
+    }
+}
+```
+
+### Using in SwiftUI
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+
+    var body: some View {
+        VStack {
+            Image(systemName: SFSymbols.starFill.rawValue)
+                .font(.largeTitle)
+            
+            Text("Available symbols: \\(SFSymbols.allCases.count)")
+        }
+    }
+}
+```
+
+## 🔧 Advanced Features
+
+### Error Handling
+
+The tool provides detailed error messages for various scenarios:
+
+- SF Symbols application not installed
+- File permission issues
+- Data format errors
+- Code generation failures
+
+### Symbol Name Conversion
+
+The tool automatically handles:
+
+- Dot notation to camelCase conversion (`arrow.left` → `arrowLeft`)
+- Swift keyword handling (`return` → `` `return` ``)
+- Numbers at the beginning (`1.circle` → `_1Circle`)
+
+### Availability Annotations
+
+Automatically generates based on SF Symbols release timeline:
+
+- iOS 13.0+: Symbols released in 2019
+- iOS 14.0+: Symbols released in 2020
+- iOS 15.0+: Symbols released in 2021
+- And so on...
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Q: SF Symbols application not found**
+
+A: Make sure you have downloaded and installed the SF Symbols app from Apple Developer website.
+
+**Q: Generated file is empty**
+
+A: Check that your SF Symbols app version is correct and that symbol data is available.
+
+**Q: Permission denied**
+
+A: Ensure the output directory has write permissions, or run the command with `sudo`.
+
+### Reporting Issues
+
+If you encounter issues, please create a GitHub issue with:
+
+1. Error message
+2. Command executed
+3. System environment (macOS version, SF Symbols version)
+4. Expected vs actual behavior
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [jollyjinx/SFSymbolEnum](https://github.com/jollyjinx/SFSymbolEnum) - Original inspiration
+- Apple Inc. - For creating SF Symbols
+
+## 📚 Documentation
+
+For more detailed documentation, please check:
+
+- [繁體中文說明文件](README_zh-TW.md)
+- Source code documentation (inline comments)
+
+## 🔗 Related Links
+
+- [SF Symbols Official Page](https://developer.apple.com/sf-symbols/)
+- [Swift Package Manager](https://swift.org/package-manager/)
+- [Swift ArgumentParser](https://github.com/apple/swift-argument-parser)
+
+---
+
+**Made with ❤️ by Leo Ho**
