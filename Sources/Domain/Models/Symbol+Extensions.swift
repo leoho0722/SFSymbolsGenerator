@@ -13,8 +13,6 @@ import Foundation
 /// names that can be used as enum case names. It handles various edge cases and naming
 /// conflicts that can occur when transforming symbol names.
 ///
-/// - Author: Leo Ho
-/// - Since: 1.0.0
 extension Symbol {
 
     /// Converts an SF Symbol name into a valid Swift enum case identifier.

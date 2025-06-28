@@ -5,7 +5,7 @@
 - [English](README.md) | [繁體中文](README_zh-TW.md)
 
 [![Swift 版本](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
+[![支援平台](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/leoho0722/SFSymbolsGenerator?sort=semver&label=Release)
 
 **使用 Swift 簡化 SF Symbols 列舉產生！**
@@ -57,11 +57,18 @@ Sources/
 
 ## 📦 安裝方式
 
+### Homebrew 安裝（推薦）
+
+```bash
+brew tap leoho0722/tap
+brew install sf-symbols-generator
+```
+
 ### 從發布版本安裝
 
 1. 從 [GitHub Releases](https://github.com/leoho0722/SFSymbolsGenerator/releases) 下載最新的二進位檔案
 2. 解壓縮並將二進位檔案放置到您希望的位置
-3. 設為可執行：`chmod +x sf-symbols`
+3. 設為可執行：`chmod +x sf-symbols-generator`
 
 ### 從原始碼建置
 
@@ -69,7 +76,7 @@ Sources/
 git clone https://github.com/leoho0722/SFSymbolsGenerator.git
 cd SFSymbolsGenerator
 swift build -c release
-# 二進位檔案將位於 .build/release/sf-symbols
+# 二進位檔案將位於 .build/release/sf-symbols-generator
 ```
 
 ## 🚀 使用方法
@@ -77,24 +84,24 @@ swift build -c release
 ### 命令結構
 
 ```bash
-sf-symbols generate <filepath> [--name <n>] [--enum-name <enum-name>] [--use-beta]
-sf-symbols version
+sf-symbols-generator generate <filepath> [--name <n>] [--enum-name <enum-name>] [--use-beta]
+sf-symbols-generator version
 ```
 
 ### 產生命令
 
 ```bash
 # 基本用法
-sf-symbols generate /path/to/output
+sf-symbols-generator generate /path/to/output
 
 # 自訂檔案名稱
-sf-symbols generate /path/to/output --name CustomSymbols
+sf-symbols-generator generate /path/to/output --name CustomSymbols
 
 # 使用測試版本
-sf-symbols generate /path/to/output --use-beta
+sf-symbols-generator generate /path/to/output --use-beta
 
 # 完整範例
-sf-symbols generate ~/Desktop --name MySymbols --use-beta
+sf-symbols-generator generate ~/Desktop --name MySymbols --use-beta
 ```
 
 ### 命令選項

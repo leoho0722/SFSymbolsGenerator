@@ -28,7 +28,7 @@ extension SFSymbolsGenerator {
     /// ## Usage
     ///
     /// ```bash
-    /// sf-symbols generate /path/to/output [--name CustomName] [--enum-name CustomEnum] [--use-beta]
+    /// sf-symbols-generator generate /path/to/output [--name CustomName] [--enum-name CustomEnum] [--use-beta]
     /// ```
     ///
     /// ## Generated Code Structure
@@ -39,8 +39,6 @@ extension SFSymbolsGenerator {
     /// - A custom `allCases` property that respects availability constraints
     /// - Proper handling of Swift keyword conflicts
     ///
-    /// - Author: Leo Ho
-    /// - Since: 1.3.0
     struct GenerateCommand: AsyncParsableCommand {
 
         /// Configuration for the generate subcommand

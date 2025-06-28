@@ -23,8 +23,8 @@ import Foundation
 /// ## Usage
 ///
 /// ```bash
-/// sf-symbols generate <output-path> [options]
-/// sf-symbols version
+/// sf-symbols-generator generate <output-path> [options]
+/// sf-symbols-generator version
 /// ```
 ///
 /// ## Features
@@ -35,17 +35,14 @@ import Foundation
 /// - Handles symbol name conflicts with Swift keywords
 /// - Customizable output file and enum names
 ///
-/// - Author: Leo Ho
-/// - Since: 1.0.0
-/// - Version: 1.3.0
 @main
 struct SFSymbolsGenerator: AsyncParsableCommand {
 
     /// The configuration for the command-line interface
     static let configuration = CommandConfiguration(
-        commandName: "sf-symbols",
+        commandName: "sf-symbols-generator",
         abstract: "Simplifying SF Symbols Enumeration Generation with Swift!",
-        version: "1.3.0",
+        version: "1.3.1",
         subcommands: [GenerateCommand.self, VersionCommand.self],
     )
 }

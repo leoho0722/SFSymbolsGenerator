@@ -12,8 +12,6 @@ import Foundation
 /// This extension adds computed properties and methods to make it easier to work with
 /// OS version release information when generating Swift availability annotations.
 ///
-/// - Author: Leo Ho
-/// - Since: 1.0.0
 extension Release {
 
     /// Generates a properly formatted availability string for Swift `@available` attributes.

@@ -72,6 +72,7 @@ struct PlistParser {
     ///     print("Symbol: \(symbol.symbol), Released: \(symbol.released)")
     /// }
     /// ```
+    ///
     static func parse(from url: URL) async throws -> ([SymbolTuple], Releases) {
         do {
             let data = try Data(contentsOf: url)

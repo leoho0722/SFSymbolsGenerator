@@ -10,7 +10,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "sf-symbols",
+            name: "sf-symbols-generator",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
             ],

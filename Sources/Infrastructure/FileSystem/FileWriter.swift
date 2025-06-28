@@ -63,6 +63,7 @@ struct FileWriter {
     /// )
     /// // Creates: /Users/username/Desktop/SFSymbols+Enum.swift
     /// ```
+    ///
     static func write(
         content: String,
         to path: String,
