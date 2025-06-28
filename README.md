@@ -5,7 +5,7 @@
 - [English](README.md) | [繁體中文](README_zh-TW.md)
 
 [![Swift Version](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
-[![Supporting Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
+[![Supported Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoho0722%2FSFSymbolsGenerator%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoho0722/SFSymbolsGenerator)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/leoho0722/SFSymbolsGenerator?sort=semver&label=Release)
 
 **Simplifying SF Symbols Enumeration Generation with Swift!**
@@ -57,11 +57,18 @@ Sources/
 
 ## 📦 Installation
 
+### Homebrew Installation (Recommended)
+
+```bash
+brew tap leoho0722/tap
+brew install sf-symbols-generator
+```
+
 ### From Releases
 
 1. Download the latest binary from [GitHub Releases](https://github.com/leoho0722/SFSymbolsGenerator/releases)
 2. Extract and place the binary in your desired location
-3. Make it executable: `chmod +x sf-symbols`
+3. Make it executable: `chmod +x sf-symbols-generator`
 
 ### Build from Source
 
@@ -69,7 +76,7 @@ Sources/
 git clone https://github.com/leoho0722/SFSymbolsGenerator.git
 cd SFSymbolsGenerator
 swift build -c release
-# Binary will be at .build/release/sf-symbols
+# Binary will be at .build/release/sf-symbols-generator
 ```
 
 ## 🚀 Usage
@@ -77,24 +84,24 @@ swift build -c release
 ### Command Structure
 
 ```bash
-sf-symbols generate <filepath> [--name <name>] [--enum-name <enum-name>] [--use-beta]
-sf-symbols version
+sf-symbols-generator generate <filepath> [--name <name>] [--enum-name <enum-name>] [--use-beta]
+sf-symbols-generator version
 ```
 
 ### Generate Command
 
 ```bash
 # Basic usage
-sf-symbols generate /path/to/output
+sf-symbols-generator generate /path/to/output
 
 # With custom filename
-sf-symbols generate /path/to/output --name CustomSymbols
+sf-symbols-generator generate /path/to/output --name CustomSymbols
 
 # Using beta version
-sf-symbols generate /path/to/output --use-beta
+sf-symbols-generator generate /path/to/output --use-beta
 
 # Complete example
-sf-symbols generate ~/Desktop --name MySymbols --use-beta
+sf-symbols-generator generate ~/Desktop --name MySymbols --use-beta
 ```
 
 ### Command Options

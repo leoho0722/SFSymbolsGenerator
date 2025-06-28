@@ -19,7 +19,7 @@ extension SFSymbolsGenerator {
     /// ## Usage
     ///
     /// ```bash
-    /// sf-symbols version
+    /// sf-symbols-generator version
     /// ```
     ///
     /// ## Output
@@ -29,8 +29,6 @@ extension SFSymbolsGenerator {
     /// SFSymbolsGenerator version 1.3.0
     /// ```
     ///
-    /// - Author: Leo Ho
-    /// - Since: 1.3.0
     struct VersionCommand: AsyncParsableCommand {
 
         /// Configuration for the version subcommand

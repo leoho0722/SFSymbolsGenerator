@@ -35,13 +35,12 @@ import Foundation
 ///         if #available(iOS 13.0, macOS 10.15, *) {
 ///             allCases.append(.arrowLeft)
 ///         }
+///
 ///         return allCases
 ///     }
 /// }
 /// ```
 ///
-/// - Author: Leo Ho
-/// - Since: 1.3.0
 struct CodeGenerator {
 
     /// Generates Swift enumeration code for SF Symbols.

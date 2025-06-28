@@ -61,6 +61,7 @@ struct SFSymbolsFinder {
     /// // Find beta version
     /// let betaPlistURL = try SFSymbolsFinder.find(isBeta: true)
     /// ```
+    ///
     static func find(isBeta: Bool) throws -> URL {
         let fileManager = FileManager.default
         let appName = isBeta ? "SF Symbols beta.app" : "SF Symbols.app"

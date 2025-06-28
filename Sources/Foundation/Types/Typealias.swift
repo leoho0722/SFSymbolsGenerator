@@ -19,8 +19,6 @@ import Foundation
 /// - **Release Information**: OS version requirements
 /// - **Data Structures**: Collections and tuples for processing
 ///
-/// - Author: Leo Ho
-/// - Since: 1.0.0
 
 /// A string representing the release date of an SF Symbol (e.g., "2019", "2020")
 typealias ReleaseDate = String
